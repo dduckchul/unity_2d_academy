@@ -75,7 +75,3 @@ crashlytics-build.properties
 # exclude mac file
 .idea/
 .DS_Store
-
-[Aa]ssets/**/
-![Aa]ssets/Scene/
-![Aa]ssets/Scripts/
