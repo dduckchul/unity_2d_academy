@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53609f5aa9be40a3ac6d07d3046dd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1411858347042426, guid: cdf17be89501f4640a7bf79c310066b3, type: 3}
+  enemyPrefab: {fileID: 1411858347042426, guid: 0cf51d01bdd934b338db3ea4def2a164, type: 3}
 --- !u!4 &740548173
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxSpeed: 10
-  bulletPrefab: {fileID: 1442545730210729967, guid: 175b435e4bd064a2594c4b0d3019f936, type: 3}
+  bulletPrefab: {fileID: 1442545730210729967, guid: a240a7933177c42a8a0e3ca69c83a29c, type: 3}
   secondBulletPrefab: {fileID: 1230325184218856, guid: 3952c3fe53f74a0409f716652bd8d27d, type: 3}
   isDoubleFire: 0
 --- !u!4 &967895203

@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         coolTime = 0;
-        spawnSpeed = 100;
+        spawnSpeed = 1000;
         tempPosition = Vector3.zero;
     }
 

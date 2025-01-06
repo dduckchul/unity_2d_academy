@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3756077038a294ad088b22936b9a056c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletPrefab: {fileID: 2477595710791044785, guid: 32a659461fadb47ddabf8fc17ce662b3, type: 3}
+  enemyBulletPrefab: {fileID: 2477595710791044785, guid: a37966f6e8e784f6fa05eceff017315b, type: 3}
 --- !u!58 &1249731357491814066
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -58,7 +58,6 @@ public class PlayerControler : MonoBehaviour
             // liniar drag -> 저항
             // angular drag -> 뭔가 회전할때 저항 뺑글 뺑글 도는거 막아줌
             // velocity 속도 (속력 + 방향)
-            
             pushPower.x = 1;
         }
         
