@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public GameObject enemyBulletPrefab; // 적 총알 꽃아 넣을 프리팹 슬롯
 
     private int coolTime; // Time을 아직 안쓸거다
+    private bool isPlayerDead;
     
     void Start()
     {
@@ -24,6 +25,15 @@ public class EnemyController : MonoBehaviour
     
     void Update()
     {
+        // 이런 부분 최적화 하고싶다 = 옵저버 패턴
+        // 플레이어 죽으면 안움직이게
+        isPlayerDead = GameManager.Instance.GetIsGameOver();
+
+        if (isPlayerDead)
+        {
+            return;
+        }
+
         if (transform.position.y > 3)
         {
             enemyRb.AddForce(moveForce);
@@ -32,8 +42,8 @@ public class EnemyController : MonoBehaviour
         {
             coolTime++;
 
-            // 업데이트 200번 할때마다 총알 쏘기
-            if (coolTime >= 200)
+            // 업데이트 1000번 할때마다 총알 쏘기
+            if (coolTime >= 1000)
             {
                 Instantiate(enemyBulletPrefab, transform.position, transform.rotation);
                 coolTime = 0;

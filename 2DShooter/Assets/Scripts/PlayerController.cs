@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerControler : MonoBehaviour, Subject
 {
     private Transform playerTr;
     private Rigidbody2D playerRb;
-
+    
     private Vector2 pushPower; // 미는 힘 선언
 
     public float moveSpeed = 5f;
@@ -19,20 +20,79 @@ public class PlayerControler : MonoBehaviour
 
     public bool isDoubleFire;
     
+    private float maxXRange = 2.2f;
+    
+    private AudioSource _audioSource;
+    public AudioClip[] shotSoundClip;
+
+    private float healthPoint; // 플레이어 체력 3
+    private float maxHealthPoint;
+
+    public ParticleSystem _particle;
+
+    private List<Observer> _observers;
+
+    private void Awake()
+    {
+        isDoubleFire = false;
+        
+        maxHealthPoint = 5;
+        healthPoint = maxHealthPoint;
+
+        pushPower = new Vector2(); // 시작과 동시에 초기화
+        // pushPower = Vector2.zero; // 시작과 동시에 초기화, 같은거
+        _observers = new List<Observer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         playerTr = GetComponent<Transform>();
         playerRb = GetComponent<Rigidbody2D>();
-        pushPower = new Vector2(); // 시작과 동시에 초기화
-        // pushPower = Vector2.zero; // 시작과 동시에 초기화, 같은거
-        isDoubleFire = false;
+        _audioSource = GetComponent<AudioSource>();
     }
 
+    public float Hp
+    {
+        get { return healthPoint; }
+        set { healthPoint = value; }
+    }
+
+    public float MaxHp
+    {
+        get { return maxHealthPoint; }
+    }
+    
+    public void DecreaseHp()
+    {
+        healthPoint--;
+        NotifyObserver();
+        if (healthPoint <= 0)
+        {
+            healthPoint = 0;
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        GameManager.Instance.SetIsGameOver();
+        Instantiate(_particle, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+    
     // Update is called once per frame
     void Update()
     {
         pushPower = Vector2.zero;
+        
+        float fixedXRange = transform.position.x < 0f ? -maxXRange : maxXRange;        
+        
+        if (Math.Abs(transform.position.x) > maxXRange)
+        {
+            playerRb.velocity = Vector2.zero;
+            transform.position = new Vector2(fixedXRange, transform.position.y);
+        }
         
         if (Input.GetKey(KeyCode.A))
         {
@@ -90,11 +150,14 @@ public class PlayerControler : MonoBehaviour
             // Instatiate(bulletPrefab, 위치, 회전) 
             // Instantiate(bulletPrefab);
             // 이 위치, 이 회전률로 프리팹을 인스턴스화 해라
-            Instantiate(bulletPrefab, v1, transform.rotation);
+            var temp = Instantiate(bulletPrefab, v1, transform.rotation);
+            temp.transform.position = transform.position;
+            temp.transform.rotation = transform.rotation;
             if (isDoubleFire)
             {
                 Instantiate(bulletPrefab, v2, transform.rotation);                
             }
+            _audioSource.PlayOneShot(shotSoundClip[0]);
         }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -103,6 +166,7 @@ public class PlayerControler : MonoBehaviour
             tempPos.y += 0.5f;
 
             Instantiate(secondBulletPrefab, tempPos, transform.rotation);
+            _audioSource.PlayOneShot(shotSoundClip[1]);
         }
         
         // 버니홉 같은거 방지하기, 정규화하기, 1을 넘지 않도록, 무조건 1이하의 숫자로 나옴
@@ -116,6 +180,24 @@ public class PlayerControler : MonoBehaviour
         if (playerRb.velocity.magnitude > maxSpeed)
         {
             playerRb.velocity = playerRb.velocity.normalized * maxSpeed;
+        }
+    }
+
+    public void RegisterObserver(Observer o)
+    {
+        _observers.Add(o);
+    }
+
+    public void RemoveObserver(Observer o)
+    {
+        _observers.Remove(o);
+    }
+
+    public void NotifyObserver()
+    {
+        foreach (Observer o in _observers)
+        {
+            o.update(this);
         }
     }
 }

@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, Observer
 {
     public GameObject enemyPrefab; // 적 기체 프리팹 설계도
     private int coolTime;
     private int spawnSpeed;
     private Vector3 tempPosition;
+    private bool isPlayerDead;
     
-    // Start is called before the first frame update
     void Start()
     {
         coolTime = 0;
-        spawnSpeed = 1000;
+        spawnSpeed = 3000;
         tempPosition = Vector3.zero;
+        GameManager.Instance.RegisterObserver(this);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         coolTime++;
@@ -29,5 +29,18 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyPrefab, tempPosition, transform.rotation);
             coolTime = 0;
         }
+    }
+
+    public void update(GameManager gameManager)
+    {
+        if (gameManager.GetIsGameOver())
+        {
+            Destroy(this);
+        }
+    }
+
+    public void update(PlayerControler playerController)
+    {
+        // 아직 뭐 안할거임
     }
 }
