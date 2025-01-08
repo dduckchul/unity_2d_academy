@@ -26,7 +26,7 @@ public class GameOverImageController : MonoBehaviour, Observer
         }
     }
     
-    public void update(PlayerControler playerController)
+    public void update(PlayerController playerController)
     {
         // throw new System.NotImplementedException();
     }

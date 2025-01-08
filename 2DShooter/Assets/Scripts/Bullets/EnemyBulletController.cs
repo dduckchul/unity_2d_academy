@@ -34,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerControler>().DecreaseHp();
+            other.gameObject.GetComponent<PlayerController>().DecreaseHp();
             Destroy(gameObject);
         }
 

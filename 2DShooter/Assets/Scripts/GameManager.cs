@@ -9,6 +9,15 @@ public class GameManager : MonoBehaviour, Subject
     private bool _isGameOver;
     private List<Observer> _observers;
 
+    public event Action<float> OnScoreChanged; // 점수 변화 이벤트
+    public event Action OnGameOver; // 게임 오버 진행되면 알아서 수행할 메서드 등록할 액션
+
+    public void TriggerGameOver()
+    {
+        _isGameOver = true;
+        OnGameOver?.Invoke(); // 게임 오버 등록된 애들한테 전부 수행 알림 쏴줌
+    }
+
     public static GameManager Instance // 프로퍼티로 만들었다, 싱글톤 패턴
     {
         get; private set;
@@ -52,6 +61,7 @@ public class GameManager : MonoBehaviour, Subject
     public void AddScore()
     {
         _score += 100;
+        OnScoreChanged?.Invoke(_score);
         NotifyObserver();
     }
 

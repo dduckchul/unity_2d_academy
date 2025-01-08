@@ -5,5 +5,5 @@ using UnityEngine;
 public interface Observer
 {
     void update(GameManager gameManager);
-    void update(PlayerControler playerController);
+    void update(PlayerController playerController);
 }

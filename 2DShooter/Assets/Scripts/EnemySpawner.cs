@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour, Observer
         }
     }
 
-    public void update(PlayerControler playerController)
+    public void update(PlayerController playerController)
     {
         // 아직 뭐 안할거임
     }

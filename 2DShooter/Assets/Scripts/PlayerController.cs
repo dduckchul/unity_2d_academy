@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour, Subject
+public class PlayerController : MonoBehaviour, Subject
 {
     private Transform playerTr;
     private Rigidbody2D playerRb;
@@ -25,13 +25,16 @@ public class PlayerControler : MonoBehaviour, Subject
     private AudioSource _audioSource;
     public AudioClip[] shotSoundClip;
 
-    private float healthPoint; // 플레이어 체력 3
-    private float maxHealthPoint;
+    private int healthPoint; // 플레이어 체력 3
+    private int maxHealthPoint;
 
     public ParticleSystem _particle;
 
     private List<Observer> _observers;
 
+    // event로 선언 안하면? -> invoke가 외부에서 호출 될 수 있음 
+    public event Action<int, int> OnHealthChanged; // 액션 선언, 체력이 바뀌었다.
+    
     private void Awake()
     {
         isDoubleFire = false;
@@ -52,7 +55,7 @@ public class PlayerControler : MonoBehaviour, Subject
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public float Hp
+    public int Hp
     {
         get { return healthPoint; }
         set { healthPoint = value; }
@@ -65,11 +68,18 @@ public class PlayerControler : MonoBehaviour, Subject
     
     public void DecreaseHp()
     {
+        // 여기까지 체력 검증
         healthPoint--;
-        NotifyObserver();
-        if (healthPoint <= 0)
+        // NotifyObserver();
+        if (healthPoint < 0)
         {
             healthPoint = 0;
+        }
+        
+        OnHealthChanged?.Invoke(healthPoint, maxHealthPoint); //
+
+        if (healthPoint == 0)
+        {
             Die();
         }
     }
