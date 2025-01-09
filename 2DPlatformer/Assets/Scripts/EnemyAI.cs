@@ -57,7 +57,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            enemyAnimator.SetBool("IsDetect", true);            
+            enemyAnimator.SetBool("IsDetect", true);   
+            enemyAnimator.ResetTrigger("IsShoot");
         }
     }
 
