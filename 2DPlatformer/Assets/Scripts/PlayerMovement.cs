@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D myRigid;
-    [SerializeField] private float movePower = 10.0f; // 프라이빗으로 유지는 하되, 인스펙터에는 노출시켜라
-    [SerializeField] private float jumpPower = 5.0f;
-    [SerializeField] private int jumpTime = 1;
+    private Rigidbody2D _myRigid;
+    public float movePower = 10.0f; // 프라이빗으로 유지는 하되, 인스펙터에는 노출시켜라
+    public float jumpPower = 5.0f;
+    private int _jumpTime = 1;
     
     private bool isJumping = false; // 메서드로 해도 되긴 함 
-
-    private float horizontalInput; // 수평 키 입력 수치를 기억시킬 변수
+    private bool isShoot = false;
 
     public GameObject playerMuzzle; // 게임 오브젝트를 담는 새로운 방식
     public GameObject playerBullet;
@@ -19,17 +18,37 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float shootElapsedTime; // 
 
     public Animator animator;
-    private int facingRight = 1; // 우측 바라보는 여부 변수 선언
-
+    private int _facingRight = 1; // 우측 바라보는 여부 변수 선언
     private int playerHealth = 20;
-    
+
+    private IPlayerState currentState;
+    public JoyStick joyStick;
+
+    public int FacingRight
+    {
+        get => _facingRight;
+        set => _facingRight = value;
+    }
+
+    public Rigidbody2D MyRigid
+    {
+        get => _myRigid;
+        set => _myRigid = value;
+    }
+
+    public int JumpTime
+    {
+        get => _jumpTime;
+        set => _jumpTime = value;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        myRigid = GetComponent<Rigidbody2D>();
+        MyRigid = GetComponent<Rigidbody2D>();
         shootElapsedTime = shootCoolTime; // 최초에 총 쏠 수 있도록
+        ChangeState(new IdleState());
     }
 
     // Update is called once per frame
@@ -37,28 +56,14 @@ public class PlayerMovement : MonoBehaviour
     // 더 자주, 더 정밀하게 수행 되어야 할 키 입력과 같은 기능이 업데이트
     void Update()
     {
-        // 시간개념 다음 업데이트까지 걸린 시간 측정, Time.DeltaTime
-        shootElapsedTime += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Space) && jumpTime < 3)
-        {
-            isJumping = true;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.L) && shootCoolTime < shootElapsedTime)
-        {
-            GameObject firedBullet = Instantiate(playerBullet, playerMuzzle.transform.position, playerMuzzle.transform.rotation); // 어디서 총알을 생성?
-            firedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10 * facingRight, 0);
-            shootElapsedTime = 0;
-            animator.SetTrigger("IsShoot");
-        }        
+        currentState.UpdateState(this);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Bullets"))
         {
-            jumpTime = 0;
+            JumpTime = 0;
         }
     }
 
@@ -74,44 +79,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isJumping)
-        {
-            jumpTime++;
-            // myRigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse); // Vector2.Left = new Vector2(0,1)
-            myRigid.velocity = new Vector2(myRigid.velocity.x, jumpPower);
-            isJumping = false;
-        }
+        currentState.FixedUpdateState(this);
+    }
 
-        // 수평 축 정보 가져오기
-        horizontalInput = Input.GetAxis("Horizontal");
-        
-        // a혹은 d키가 얼마나 눌렸는지
-        if (horizontalInput != 0)
-        {
-            animator.SetBool("IsWalk", true);
+    private void LateUpdate()
+    {
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+    }
 
-            if (horizontalInput < 0)
-            {
-                facingRight = -1;
-                // 각도 변경
-                transform.rotation = new Quaternion(0, 180, 0,0);
-            }
-            else
-            {
-                facingRight = 1;
-                // 각도 변경
-                transform.rotation = new Quaternion(0, 0, 0,0);                
-            }
-        }
-        else
-        {
-            animator.SetBool("IsWalk", false);
-        }
-        
-        // 천천히 밀림
-        // myRigid.AddForce(new Vector2(horizontalInput, 0) * movePower);
+    public void ChangeState(IPlayerState newState)
+    {
+        currentState = newState;
+        currentState.EnterState(this);
+    }
 
-        // 바로 가속을 준다, input Manager에 sensitivity 와 영향 있음 (클수록 반응 빨라짐)
-        myRigid.velocity = new Vector2(horizontalInput * movePower, myRigid.velocity.y);
+    public void Jump()
+    {
+        MyRigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+    }
+
+    public bool CanJump()
+    {
+        return JumpTime < 3;
+    }
+
+    public bool CanShoot()
+    {
+        return shootCoolTime < shootElapsedTime;
+    }
+    
+    public void ResetShootTimer()
+    {
+        shootElapsedTime = 0;
     }
 }

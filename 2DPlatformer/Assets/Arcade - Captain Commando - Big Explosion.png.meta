@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: bfac0581ba6474812b614f52c19c4a5e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 412
+        width: 148
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b849c64bf684db9998c54b5910ab10
+      internalID: -84324221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 412.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d485071133157495997f2c74698b90d2
+      internalID: 908240793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 412
+        width: 148
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968617fbacda74509aa76e3da53d9d86
+      internalID: -1412968920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 412.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4542af50116e24a67a53c182108f5b42
+      internalID: 18595071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 412.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580c261c7d76a4d9d8947e29902b82ec
+      internalID: 1170715518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 275.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362e3be223f26437aa8773a9f4fa03a7
+      internalID: 402881168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 275.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08eea561ce4c4c2eb0aa1557375d367
+      internalID: 1722532358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 275.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bc07b19db2843efa01bd04e22b4865
+      internalID: -735827007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 275.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd110e2c101c04e2bbb4b7ce5533abce
+      internalID: 866789535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 275.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115896c1bb8eb46bba87b671ef6d59f1
+      internalID: -1259734977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5762f20fd2c41e5960c597425898e2
+      internalID: 432532469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 138.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1b1780cb03e4514b6d6b904e9e0a62
+      internalID: 28023409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 138.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743f0b0467221477a87c4e8317802cb9
+      internalID: -367289770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 138.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c4f8aca651b4ba7b948e59e49d180a
+      internalID: 1853854385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 138.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0ebe0f2ea784a64929a8f10760ab73
+      internalID: 838573539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3653fe001ef244bc8e284637c6a61b2
+      internalID: 973091001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c98559923bb4105b7ab3c2189d9f45
+      internalID: -1529650261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a30c3d829bec4b638eda9847889946f
+      internalID: -786425190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c382e2438e44a4b95613208e8b2c27
+      internalID: 54949113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Captain Commando - Big Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1.5
+        width: 148
+        height: 137.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd0198dc69fb48579862629411ab3b2
+      internalID: 371851100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Arcade - Captain Commando - Big Explosion_0: -84324221
+      Arcade - Captain Commando - Big Explosion_1: 908240793
+      Arcade - Captain Commando - Big Explosion_10: 432532469
+      Arcade - Captain Commando - Big Explosion_11: 28023409
+      Arcade - Captain Commando - Big Explosion_12: -367289770
+      Arcade - Captain Commando - Big Explosion_13: 1853854385
+      Arcade - Captain Commando - Big Explosion_14: 838573539
+      Arcade - Captain Commando - Big Explosion_15: 973091001
+      Arcade - Captain Commando - Big Explosion_16: -1529650261
+      Arcade - Captain Commando - Big Explosion_17: -786425190
+      Arcade - Captain Commando - Big Explosion_18: 54949113
+      Arcade - Captain Commando - Big Explosion_19: 371851100
+      Arcade - Captain Commando - Big Explosion_2: -1412968920
+      Arcade - Captain Commando - Big Explosion_3: 18595071
+      Arcade - Captain Commando - Big Explosion_4: 1170715518
+      Arcade - Captain Commando - Big Explosion_5: 402881168
+      Arcade - Captain Commando - Big Explosion_6: 1722532358
+      Arcade - Captain Commando - Big Explosion_7: -735827007
+      Arcade - Captain Commando - Big Explosion_8: 866789535
+      Arcade - Captain Commando - Big Explosion_9: -1259734977
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
