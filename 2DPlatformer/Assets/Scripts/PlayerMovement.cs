@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _myRigid;
     public float movePower = 10.0f; // 프라이빗으로 유지는 하되, 인스펙터에는 노출시켜라
     public float jumpPower = 5.0f;
-    private int _jumpTime = 1;
+    [SerializeField] private int _jumpTime = 0;
     
     private bool isJumping = false; // 메서드로 해도 되긴 함 
     private bool isShoot = false;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private int _facingRight = 1; // 우측 바라보는 여부 변수 선언
     private int playerHealth = 20;
 
-    private IPlayerState currentState;
+    [SerializeField] private IPlayerState currentState;
     public JoyStick joyStick;
 
     public int FacingRight
@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     // 더 자주, 더 정밀하게 수행 되어야 할 키 입력과 같은 기능이 업데이트
     void Update()
     {
+        shootElapsedTime += Time.deltaTime;
         currentState.UpdateState(this);
     }
 
@@ -95,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        MyRigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        ChangeState(new JumpingState());
     }
 
     public bool CanJump()

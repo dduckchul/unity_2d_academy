@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -12,7 +13,6 @@ public class JoyStick : MonoBehaviour, IDragHandler, IEndDragHandler
     public RectTransform rectTransform;
 
     public Vector2 joyStickInput;
-
     public float joyStickX;
 
     public void OnDrag(PointerEventData eventData)

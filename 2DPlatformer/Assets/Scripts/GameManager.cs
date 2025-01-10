@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {   
+
     }
 
     // Update is called once per frame
@@ -64,7 +65,5 @@ public class GameManager : MonoBehaviour
         // UI 시스템도 영향 안받음. 렌더링도 안받음
         // 애니메이션 영향 안받음
         // 오디오소스 영향 안받음
-        
-        
     }
 }
