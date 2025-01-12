@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private IPlayerState currentState;
     public JoyStick joyStick;
+
+    // 직렬화 배웠으니 UnityEvent로 써보겠다
+    public event Action OnFire;
+    // 직렬화 가능한 이벤트 델리게이트
+    // 델리게이트 체인에 무엇이 등록 될 지, 인스펙트로 드래그해서 꽂아넣을 수 있다.
+    public UnityEvent OnEventTriggred;
 
     public int FacingRight
     {
@@ -49,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
         MyRigid = GetComponent<Rigidbody2D>();
         shootElapsedTime = shootCoolTime; // 최초에 총 쏠 수 있도록
         ChangeState(new IdleState());
+        OnEventTriggred.AddListener(PrintHello);
+        OnEventTriggred.Invoke();
+        // eventAction : 빠릿함, 매개변수 최대 16개
+        // UnityAction : 쪼금 느림, 매개변수 최대 4개, 기획자와 협업시
     }
 
     // Update is called once per frame
@@ -99,6 +110,11 @@ public class PlayerMovement : MonoBehaviour
         ChangeState(new JumpingState());
     }
 
+    public void Fire()
+    {
+        ChangeState(new ShootingState());
+    }
+
     public bool CanJump()
     {
         return JumpTime < 3;
@@ -112,5 +128,10 @@ public class PlayerMovement : MonoBehaviour
     public void ResetShootTimer()
     {
         shootElapsedTime = 0;
+    }
+
+    public void PrintHello()
+    {
+        Debug.Log("헬로");
     }
 }

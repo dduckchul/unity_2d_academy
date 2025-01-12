@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float shootElapsedTime; // 흐른 시간
 
     [Header("멘트")] // 헤더 달았음
-    public EnemyBulletController enemyBullet;
+    public GameObject enemyBullet;
     public GameObject enemyMuzzle; // 게임 오브젝트를 담는 새로운 방식
     
     private int initPoolSize = 10; // 풀 사이즈 추가 했음
@@ -60,7 +60,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         enemyAnimator = GetComponent<Animator>();
-        bulletPool = new ObjectPool<EnemyBulletController>(enemyBullet, initPoolSize);
+        bulletPool = new ObjectPool<EnemyBulletController>(enemyBullet.gameObject.GetComponent<EnemyBulletController>(), initPoolSize);
     }
 
     // Update is called once per frame
