@@ -8,6 +8,7 @@ public class AssetBundleLoader : MonoBehaviour
 {
     private string _bundlePath = "Assets/AssetBundles/stage1barrel"; // 에셋 번들 위치
     private string url = "https://docs.google.com/uc?export=download&id=1lc8bDupmNzdHsDfAPukpzLgOKnxD7Ca2";
+    
     private void Start()
     {
         // AssetBundle bundle = AssetBundle.LoadFromFile(_bundlePath);

@@ -126,7 +126,7 @@ public class ObjPool : MonoBehaviour
         }
 
         // 람다식으로 리팩토링
-//        myObjPool = new ObjectPool<GameObject>(CreateNewObject, ActivateObject, DeActivateObject, DestroyObject);
+        // myObjPool = new ObjectPool<GameObject>(CreateNewObject, ActivateObject, DeActivateObject, DestroyObject);
         myObjPool = new ObjectPool<GameObject>
         (
             createFunc: () => Instantiate(toInstantiate),
@@ -159,9 +159,9 @@ public class ObjPool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myObjPool.Get();
+        // myObjPool.Get();
         // 계속 1씩 증가한다~ 외부에 있음에도 불구하고.. ㄷㄷ
-//        OnRunning.Invoke();
-//        Debug.Log(getValue());
+        // OnRunning.Invoke();
+        // Debug.Log(getValue());
     }
 }
