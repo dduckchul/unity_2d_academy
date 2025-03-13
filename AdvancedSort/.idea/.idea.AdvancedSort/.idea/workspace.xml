@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="520ad675-a5e4-4e51-83df-4d7d97252f62" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="520ad675-a5e4-4e51-83df-4d7d97252f62" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738299215416</updated>
       <workItem from="1738299216661" duration="7738000" />
+      <workItem from="1738308888549" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="feat : Day47 업데이트">
       <option name="closed" value="true" />
@@ -117,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738306114804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix : .gitignore 수정">
+      <option name="closed" value="true" />
+      <created>1738308921678</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738308921678</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +176,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat : Day47 업데이트" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : Day47 업데이트" />
+    <MESSAGE value="fix : .gitignore 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix : .gitignore 수정" />
   </component>
 </project>

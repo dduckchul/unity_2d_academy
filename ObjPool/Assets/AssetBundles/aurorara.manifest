@@ -1,0 +1,45 @@
+ManifestFileVersion: 0
+CRC: 1432551543
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b34b31bb20c6b9aea20341e46c2c55c2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5732523abeeda27871957b7bfdef8dad
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b34b31bb20c6b9aea20341e46c2c55c2
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundles/Aurora/aurora.fbx
+- Assets/AssetBundles/Aurora/aurora.glb
+- Assets/AssetBundles/Aurora/Base.png
+- Assets/AssetBundles/Aurora/New Material.mat
+Dependencies: []

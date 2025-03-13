@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+CRC: 1671868382
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1261e74dfc8a9e2ac24dada6e0251ec3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9b123a21428b35207bf821852d57cf6f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1261e74dfc8a9e2ac24dada6e0251ec3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundles/Barrel/Barrel.prefab
+- Assets/AssetBundles/Barrel/Materials/Barrel-Barrel.mat
+- Assets/AssetBundles/Barrel/Barrel_D.tga
+- Assets/AssetBundles/Barrel/Materials/Barrel-Barrel 1.mat
+- Assets/AssetBundles/Barrel/Materials/Barrel-Barrel 2.mat
+- Assets/AssetBundles/Barrel/Barrel_D2.tga
+- Assets/AssetBundles/Barrel/Barrel_D1.tga
+- Assets/AssetBundles/Barrel/Barrel.fbx
+Dependencies: []
